@@ -3,20 +3,14 @@ $servername = "localhost"; // Replace with your server name
 $username = "usermane"; // Replace with your database username
 $password = "password"; // Replace with your database password
 $dbname = "database"; // Replace with your database name
-
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 $sql = "SELECT * FROM form"; // Change 'form' to your actual table name
-
 $result = $conn->query($sql);
-
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +19,6 @@ $conn->close();
      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
-
-
-
-
-
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
@@ -52,25 +40,15 @@ $conn->close();
                             <td class="border-t-2 border-gray-200 px-4 py-3"><?php echo $row['name']; ?></td>
             <td class="border-t-2 border-gray-200 px-4 py-3"><?php echo $row['email']; ?></td>
             <td class="border-t-2 border-gray-200 px-4 py-3"><?php echo $row['message']; ?></td>
-
-                               
                             </tr>
                         <?php endwhile; ?>
-        
         </tbody>
       </table>
       <?php else: ?>
                     <p>No results found</p>
                 <?php endif; ?>
     </div>
-   
   </div>
 </section>
-
-
-
-
-
-
 </body>
 </html>

@@ -1,322 +1,505 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Portfolio</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <dh-component>
-        <!--   more free components available at www.TailwindUIKit.com -->
-        <nav id="home" class="w-full border-b bg-gray-900">
-          <div class="py-4 md:py-0 container mx-auto px-6 flex items-center justify-between">
-            <div aria-label="Home. logo" role="img">
-              <!-- <img class="w-12 md:w-auto" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/centre_aligned_simple-Svg1.svg" alt="logo" /> -->
-              <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-3xl text-center text-gray-100 font-black leading-7 md:leading-10">
-                Siddharth<span class="text-yellow-200">.dev</span>
-                
-              </h1>
-            </div>
-            <div>
-              <button onclick="toggleMenu(true)" class="sm:block md:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                <svg aria-haspopup="true" aria-label="open Main Menu" xmlns="http://www.w3.org/2000/svg" class="md:hidden icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <line x1="4" y1="8" x2="20" y2="8"></line>
-                  <line x1="4" y1="16" x2="20" y2="16"></line>
+      <nav id="home" class="w-full border-b bg-gray-900">
+        <div
+          class="py-4 md:py-0 container mx-auto px-6 flex items-center justify-between">
+          <div aria-label="Home. logo" role="img">
+            <h1
+              class="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-3xl text-center text-gray-100 font-black leading-7 md:leading-10">
+              Siddharth<span class="text-yellow-200">.dev</span>
+            </h1>
+          </div>
+          <div>
+            <button
+              onclick="toggleMenu(true)"
+              class="sm:block md:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
+              <svg
+                aria-haspopup="true"
+                aria-label="open Main Menu"
+                xmlns="http://www.w3.org/2000/svg"
+                class="md:hidden icon icon-tabler icon-tabler-menu"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#2c3e50"
+                fill="none"
+                stroke-linecap="round">
+                <path stroke="none" d="M0 0h24v24H0z"></path>
+                <line x1="4" y1="8" x2="20" y2="8"></line>
+                <line x1="4" y1="16" x2="20" y2="16"></line>
+              </svg>
+            </button>
+            <div id="menu" class="md:block lg:block hidden">
+              <button
+                onclick="toggleMenu(false)"
+                class="block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 fixed focus:outline-none focus:ring-2 focus:ring-gray-500 z-30 top-0 mt-6">
+                <svg
+                  aria-label="close main menu"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#2c3e50"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
-              <div id="menu" class="md:block lg:block hidden">
-                <button onclick="toggleMenu(false)" class="block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 fixed focus:outline-none focus:ring-2 focus:ring-gray-500 z-30 top-0 mt-6">
-                  <svg aria-label="close main menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-                <ul class="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
-                  <li class="text-gray-100 hover:text-gray-400 cursor-pointer text-base  lg:text-xl pt-10 md:pt-0">
-                    <a href="#home">Home</a>
-                  </li>
-                  <li class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                    <a href="#projects">Projects</a>
-                  </li>
-                  <li class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                    <a href="#achievements">Achievements</a>
-                  </li>
-                  <li class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                    <a href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
+              <ul
+                class="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
+                <li
+                  class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0">
+                  <a href="#home">Home</a>
+                </li>
+                <li
+                  class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                  <a href="#projects">Projects</a>
+                </li>
+                <li
+                  class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                  <a href="#achievements">Achievements</a>
+                </li>
+                <li
+                  class="text-gray-100 hover:text-gray-400 cursor-pointer text-base lg:text-xl pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
             </div>
-            <button ></button>
           </div>
-        </nav>
-        <div class="bg-gray-900">
-          <div class="container mx-auto flex flex-col items-center py-52 ">
-            <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-100 font-black leading-7 md:leading-10">
-                Hi, I am 
-                <span class="text-yellow-200">Siddharth</span>
-                
-              </h1>
-              <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-100 font-normal text-center text-3xl ">I an a Full Stack Feveloper who turns your vision to code.</p>
+          <button></button>
+        </div>
+      </nav>
+      <div class="bg-gray-900">
+        <div class="container mx-auto flex flex-col items-center py-52">
+          <div
+            class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
+            <h1
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-100 font-black leading-7 md:leading-10">
+              Hi, I am
+              <span class="text-yellow-200">Siddharth</span>
+            </h1>
+            <p
+              class="mt-5 sm:mt-10 lg:w-10/12 text-gray-100 font-normal text-center text-3xl">
+              I an a Full Stack Developer who turns your vision to code.
+            </p>
+          </div>
+          <div class="flex justify-center items-center">
+            <a href="#contact">
+              <button
+                class="bg-yellow-500 hover:bg-yellow-600 lg:text-xl lg:font-bold rounded text-white px-4 sm:px-10 py-2 sm:py-4 text-sm">
+                Contact Now
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </dh-component>
+
+    <section id="projects" class="text-gray-600 body-font">
+      <div class="container px-5 py-12 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1 class="sm:text-6xl text-3xl font-medium title-font text-gray-900">
+            Projects
+          </h1>
+        </div>
+        <div class="flex flex-wrap -m-4">
+          <div class="md:w-1/2 p-4 w-full">
+            <img
+              alt="ecommerce"
+              class="object-cover object-center"
+              src="./images/BookIt (2) (1).png" />
+
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                Web App
+              </h3>
+              <h2 class="text-gray-900 flex title-font text-lg font-medium">
+                Book It
+              </h2>
+              <div class="flex flex-row">
+                <a
+                  target="_blank"
+                  href="https://bookit-client-lezg.onrender.com/"
+                  class="text-blue-900 flex title-font text-lg font-medium mr-auto"
+                  >Live Preview</a
+                >
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/BookIt"
+                  class="text-blue-900 flex title-font text-lg mr-10 font-medium"
+                  >Source Code</a
+                >
+              </div>
+              <p class="mt-1">Hall Booking Management using MERN Stack</p>
             </div>
-            <div class="flex justify-center items-center">
-              <a href="#contact"> <button class=" bg-yellow-500 hover:bg-yellow-600 lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 py-2 sm:py-4 text-sm">Contact Now</button></a>
+          </div>
+
+          <div class="md:w-1/2 p-4 w-full">
+            <img
+              alt="ecommerce"
+              class="object-cover object-center"
+              src="./images/to watch.png" />
+
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                Web App
+              </h3>
+              <h2 class="text-gray-900 flex title-font text-lg font-medium">
+                To Watch
+              </h2>
+              <div class="flex flex-row">
+                <a
+                  target="_blank"
+                  href="https://to-watch.netlify.app/"
+                  class="text-blue-900 flex title-font text-lg font-medium mr-auto"
+                  >Live Preview</a
+                >
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/react-movie-app"
+                  class="text-blue-900 flex title-font text-lg mr-10 font-medium">
+                  Source Code</a
+                >
+              </div>
+              <p class="mt-1">
+                A movie app built using React for browsing and discovering
+                movies from a movie database API.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-4 w-full">
+            <img
+              alt="ecommerce"
+              class="object-cover object-center"
+              src="./images/Student Management(1).png" />
+
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                Windows Application
+              </h3>
+              <h2 class="text-gray-900 flex title-font text-lg font-medium">
+                Student Management System
+              </h2>
+              <div class="flex flex-row">
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/Student-Management-System-VB.Net/releases"
+                  class="text-blue-900 flex title-font text-lg font-medium mr-auto"
+                  >Live Preview</a
+                >
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/Student-Management-System-VB.Net"
+                  class="text-blue-900 flex title-font text-lg mr-10 font-medium">
+                  Source Code</a
+                >
+              </div>
+              <p class="mt-1">
+                A Student Management System Created Using VB.Net and Microsoft
+                Access.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-4 w-full">
+            <img
+              alt="ecommerce"
+              class="object-cover object-center"
+              src="./images/todo list.png" />
+
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                Web App
+              </h3>
+              <h2 class="text-gray-900 flex title-font text-lg font-medium">
+                React todo list
+              </h2>
+              <div class="flex flex-row">
+                <a
+                  target="_blank"
+                  href="https://your-todos-list.netlify.app/"
+                  class="text-blue-900 flex title-font text-lg font-medium mr-auto"
+                  >Live Preview</a
+                >
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/react-todo-list"
+                  class="text-blue-900 flex title-font text-lg mr-10 font-medium">
+                  Source Code</a
+                >
+              </div>
+              <p class="mt-1">
+                This is a todo list manager made by react and tailwind css live
+                deployment can be find by clicking below link.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-4 w-full">
+            <img
+              alt="ecommerce"
+              class="object-cover object-center"
+              src="./images/todo list.png" />
+
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                Web App
+              </h3>
+              <h2 class="text-gray-900 flex title-font text-lg font-medium">
+                Your Todo List Using MERN Stack
+              </h2>
+              <div class="flex flex-row">
+                <a
+                  target="_blank"
+                  href="https://yourtodolistmern.netlify.app/"
+                  class="text-blue-900 flex title-font text-lg font-medium mr-auto"
+                  >Live Preview</a
+                >
+                <a
+                  target="_blank"
+                  href="https://github.com/siddharth9300/todoListUsingMERN"
+                  class="text-blue-900 flex title-font text-lg mr-10 font-medium">
+                  Source Code</a
+                >
+              </div>
+              <p class="mt-1">
+                A Todo Management Web App made with MERN Stack with
+                Authantication
+              </p>
             </div>
           </div>
         </div>
-      </dh-component>
+      </div>
+    </section>
 
-     
-          <section id="projects" class="text-gray-600 body-font">
-          
-            <div class="container px-5 py-12 mx-auto">
-                <div class="flex flex-col text-center w-full mb-20">
-                    <h1 class="sm:text-6xl text-3xl font-medium title-font text-gray-900">Projects</h1>
-                  </div>
-              <div class="flex flex-wrap -m-4">
-           
-
-                <div class=" md:w-1/2 p-4 w-full">
-                    
-                    <img alt="ecommerce" class="object-cover object-center " src="./images/BookIt (2) (1).png">
-         
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Web App</h3>
-                    <h2 class="text-gray-900 flex title-font text-lg font-medium">Book It  </h2>
-                    <div class="flex flex-row ">
-
-                        <a target="_blank" href="https://bookit-client-lezg.onrender.com/" class="text-blue-900 flex title-font text-lg font-medium mr-auto">Live Preview</a>
-                        <a target="_blank" href="https://github.com/siddharth9300/BookIt" class="text-blue-900 flex title-font text-lg  mr-10 font-medium">Source Code</a>
-                    </div>
-                    <p class="mt-1">Hall Booking Management using MERN Stack</p>
-                   
-                  </div>
-                </div>
-
-
-
-
-
-
-
-
-                <div class=" md:w-1/2 p-4 w-full">
-                    
-                    <img alt="ecommerce" class="object-cover object-center " src="./images/to watch.png">
-            
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Web App</h3>
-                    <h2 class="text-gray-900 flex title-font text-lg font-medium">To Watch  </h2>
-                    <div class="flex flex-row ">
-
-                        <a target="_blank" href="https://to-watch.netlify.app/" class="text-blue-900 flex title-font text-lg font-medium mr-auto">Live Preview</a>
-                        <a target="_blank" href="https://github.com/siddharth9300/react-movie-app" class="text-blue-900 flex title-font text-lg  mr-10 font-medium">  Source Code</a>
-                    </div>
-                    <p class="mt-1">A movie app built using React for browsing and discovering movies from a movie database API.</p>
-                   
-                  </div>
-                </div>
-
-
-                <div class=" md:w-1/2 p-4 w-full">
-                    
-                    <img alt="ecommerce" class="object-cover object-center " src="./images/Student Management(1).png">
-                
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Windows Application</h3>
-                    <h2 class="text-gray-900 flex title-font text-lg font-medium">Student Management System</h2>
-                    <div class="flex flex-row ">
-
-                        <a target="_blank" href="https://github.com/siddharth9300/Student-Management-System-VB.Net/releases" class="text-blue-900 flex title-font text-lg font-medium mr-auto">Live Preview</a>
-                        <a target="_blank" href="https://github.com/siddharth9300/Student-Management-System-VB.Net" class="text-blue-900 flex title-font text-lg  mr-10 font-medium">  Source Code</a>
-                    </div>
-                    <p class="mt-1">A Student Management System Created Using VB.Net and Microsoft Access.</p>
-                   
-                  </div>
-                </div>
-
-
-                <div class=" md:w-1/2 p-4 w-full">
-                    
-                    <img alt="ecommerce" class="object-cover object-center " src="./images/todo list.png">
-           
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Web App</h3>
-                    <h2 class="text-gray-900 flex title-font text-lg font-medium">React todo list</h2>
-                    <div class="flex flex-row ">
-
-                        <a target="_blank" href="https://your-todos-list.netlify.app/" class="text-blue-900 flex title-font text-lg font-medium mr-auto">Live Preview</a>
-                        <a target="_blank" href="https://github.com/siddharth9300/react-todo-list" class="text-blue-900 flex title-font text-lg  mr-10 font-medium">  Source Code</a>
-                    </div>
-                    <p class="mt-1">This is a todo list manager made by react and tailwind css live deployment can be find by clicking below link.</p>
-                   
-                  </div>
-                </div>
-
-
-
-
-                <div class=" md:w-1/2 p-4 w-full">
-                    
-                    <img alt="ecommerce" class="object-cover object-center " src="./images/todo list.png">
-         
-                <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Web App</h3>
-                    <h2 class="text-gray-900 flex title-font text-lg font-medium">Your Todo List Using MERN Stack</h2>
-                    <div class="flex flex-row ">
-
-                        <a target="_blank" href="https://yourtodolistmern.netlify.app/" class="text-blue-900 flex title-font text-lg font-medium mr-auto">Live Preview</a>
-                        <a target="_blank" href="https://github.com/siddharth9300/todoListUsingMERN" class="text-blue-900 flex title-font text-lg  mr-10 font-medium">  Source Code</a>
-                    </div>
-                    <p class="mt-1">A Todo Management Web App made with MERN Stack with Authantication</p>
-                   
-                  </div>
-                </div>
-
-
-
-
-
-
-
-              </div>
+    <section id="achievements" class="text-gray-100 bg-gray-900 body-font">
+      <div class="flex flex-col text-center w-full">
+        <h1
+          class="sm:text-6xl text-3xl font-medium my-10 title-font text-gray-100">
+          Achievements
+        </h1>
+      </div>
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+          <div class="sm:w-1/2 mb-10 px-4">
+            <div class="rounded-lg overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center"
+                src="./images/hacktober.png" />
             </div>
-      
+            <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">
+              Hacktober Fest 2023
+            </h2>
+            <a
+              href="https://hacktoberfest.com/profile/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <button
+                class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+                See Here
+              </button></a
+            >
+          </div>
 
-          </section>
-         
-
-
-
-
-
-
-
-
-          <section id="achievements" class="text-gray-100 bg-gray-900 body-font">
-            <div class="flex flex-col text-center w-full ">
-                <h1 class="sm:text-6xl text-3xl font-medium my-10 title-font text-gray-100">Achievements</h1>
-              </div>
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-
-                <div class="sm:w-1/2 mb-10 px-4">
-                    <div class="rounded-lg overflow-hidden">
-                      <img alt="content" class="object-cover object-center" src="./images/hacktober.png">
-                    </div>
-                    <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">Hacktober Fest 2023</h2>
-                    <a href="https://hacktoberfest.com/profile/" target="_blank" rel="noopener noreferrer">  <button  class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">  See Here</button></a>
-                  </div>
-
-
-        
-
-
-                <div class="sm:w-1/2 mb-10 px-4">
-                  <div class="rounded-lg overflow-hidden">
-                    <img alt="content" class="object-cover object-center" src="./images/hacksqad.jpg">
-                  </div>
-                  <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">Hacksquad 2023</h2>
-                  <a href="https://www.hacksquad.dev/ticket/siddharth9300" target="_blank" rel="noopener noreferrer">  <button  class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">  See Here</button></a>
-                </div>
-
-                <div class="sm:w-2/2 mb-10 px-4 mx-auto">
-                    <div class="rounded-lg overflow-hidden">
-                      <img alt="content" class="object-cover object-center" src="./images/holopin.png">
-                    </div>
-                    <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">Holopin</h2>
-                    <a href="https://www.holopin.io/@siddharth9300#" target="_blank" rel="noopener noreferrer">  <button  class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">  See Here</button></a>
-                  </div>
-              </div>
+          <div class="sm:w-1/2 mb-10 px-4">
+            <div class="rounded-lg overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center"
+                src="./images/hacksqad.jpg" />
             </div>
+            <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">
+              Hacksquad 2023
+            </h2>
+            <a
+              href="https://www.hacksquad.dev/ticket/siddharth9300"
+              target="_blank"
+              rel="noopener noreferrer">
+              <button
+                class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+                See Here
+              </button></a
+            >
+          </div>
 
-            
-          
-          </section>
-
-
-
-
-
-
-
-
-
-          <section id="contact" class="text-gray-900 body-font relative">
-            <div class="container px-5 py-24 mx-auto">
-              <form action="form.php" method="post">
-              <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 ">Contact Us</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fill this form to contact me.</p>
-              </div>
-              <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                      <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                    </div>
-                  </div>
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                      <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                      <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <button class="flex mx-auto  text-white bg-yellow-500 hover:bg-yellow-600 border-0 py-2 px-8 focus:outline-none  rounded text-lg">Send</button>
-                  </div>
-                
-                </div>
-              </div>
-            </form>
+          <div class="sm:w-2/2 mb-10 px-4 mx-auto">
+            <div class="rounded-lg overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center"
+                src="./images/holopin.png" />
             </div>
-          </section>
+            <h2 class="title-font text-2xl font-medium text-gray-100 mt-6 mb-3">
+              Holopin
+            </h2>
+            <a
+              href="https://www.holopin.io/@siddharth9300#"
+              target="_blank"
+              rel="noopener noreferrer">
+              <button
+                class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+                See Here
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-
-  <footer class="text-gray-200 bg-gray-900 body-font">
-    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="#home">
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-3xl text-center text-gray-100 font-black leading-7 md:leading-10">
-                Siddharth<span class="text-yellow-200">.dev</span>
+    <section id="contact" class="text-gray-900 body-font relative">
+      <div class="container px-5 py-24 mx-auto">
+        <form action="form.php" method="post">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4">
+              Contact Us
             </h1>
-        </a>
-        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-            © 2023 siddharth.dev —
-            <a href="https://github.com/siddharth9300" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@siddharth9300</a>
-        </p>
-        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a class="ml-3" href="https://twitter.com/sidd9300" rel="noopener noreferrer" target="_blank">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-            </a>
-            <a class="ml-3" href="https://Instagram.com/siddharth_9300" rel="noopener noreferrer" target="_blank">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
-            </a>
-            <a class="ml-3" href="https://www.linkedin.com/in/siddharth9300" rel="noopener noreferrer" target="_blank">
-                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                </svg>
-            </a>
-        </span>
-    </div>
-</footer>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              Fill this form to contact me.
+            </p>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-gray-600"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <button
+                  class="flex mx-auto text-white bg-yellow-500 hover:bg-yellow-600 border-0 py-2 px-8 focus:outline-none rounded text-lg">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
-</body>
+    <footer class="text-gray-200 bg-gray-900 body-font">
+      <div
+        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a
+          class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+          href="#home">
+          <h1
+            class="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-3xl text-center text-gray-100 font-black leading-7 md:leading-10">
+            Siddharth<span class="text-yellow-200">.dev</span>
+          </h1>
+        </a>
+        <p
+          class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          © 2023 siddharth.dev —
+          <a
+            href="https://github.com/siddharth9300"
+            class="text-gray-600 ml-1"
+            rel="noopener noreferrer"
+            target="_blank"
+            >@siddharth9300</a
+          >
+        </p>
+        <span
+          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a
+            class="ml-3"
+            href="https://twitter.com/sidd9300"
+            rel="noopener noreferrer"
+            target="_blank">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5 text-gray-500"
+              viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a
+            class="ml-3"
+            href="https://Instagram.com/siddharth_9300"
+            rel="noopener noreferrer"
+            target="_blank">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5 text-gray-500"
+              viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a
+            class="ml-3"
+            href="https://www.linkedin.com/in/siddharth9300"
+            rel="noopener noreferrer"
+            target="_blank">
+            <svg
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0"
+              class="w-5 h-5 text-gray-500"
+              viewBox="0 0 24 24">
+              <path
+                stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+  </body>
 </html>
